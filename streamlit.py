@@ -3,11 +3,9 @@ import streamlit as st
 
 st.title("Emotion classifier")
 FRAME_WINDOW = st.image([])
-cam = cv2.VideoCapture(-1)
+cam = cv2.VideoCapture(0)
 
-ret, img = cam.read()
-while ret:
-# while True:
+while True:
     ret, frame = cam.read()
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     FRAME_WINDOW.image(frame)
